@@ -3,8 +3,14 @@
 # print('Hello Git')
 # print('Hello Git on Pycharm')
 
-n = 100000
+import time as t
 
+t0 = t.time()
+
+
+# Bad slow code as an example in the textbook (script 1)
+
+n = 1000
 count = 0
 for i in range(2,n + 1):
     no_factors_found = True
@@ -18,7 +24,13 @@ for i in range(2,n + 1):
         count += 1
 
 print("# Prime numbers between 2 and", str(n) + ":", count)
-print((count + 1)- 100000)
+
+t1 = t.time()
+
+print(t1 - t0)
+
+
+
 
 # n = 12 # end of range of numbers to check for primes
 #
