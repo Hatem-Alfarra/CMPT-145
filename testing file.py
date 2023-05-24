@@ -3,7 +3,10 @@
 # print('Hello Git')
 # print('Hello Git on Pycharm')
 
-list = [2,3,1,9,5,4,8,7,0]
+import time as t
+import random as r
+
+list = [r.randint(0, 10)]* 10
 new_list = []
 
 while len(list) > 0:
