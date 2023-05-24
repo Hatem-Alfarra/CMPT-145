@@ -6,7 +6,18 @@
 import time as t
 import random as r
 
-list = [r.randint(0, 10)]* 10
+
+list = list()
+
+n = 10
+
+while n > 0:
+    num = r.randint(1,9)
+    list.append(num)
+
+    n -= 1
+
+
 new_list = []
 
 while len(list) > 0:
