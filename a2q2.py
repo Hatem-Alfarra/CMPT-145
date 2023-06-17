@@ -115,6 +115,20 @@ def sort_students_into_grades(student_list: list) -> dict:
 
 
 # TODO: Create tests for functions above
+
+# Testing function gcd().
+
+# Test 1: correct parameters as parameters.
+def gcd_test1():
+    parameter_1 = 12
+    parameter_2 = 8
+    result = gcd(parameter_1, parameter_2)
+    expected = 4
+    if result != expected:
+        print("Test case 1 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected number:", expected)
+
+
+
 # TODO Create test driver for whitebox tested functions
 # TODO: Create test driver for blackbox tested functions
 # TODO: Create test driver to test all functions
