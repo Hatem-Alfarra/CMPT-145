@@ -191,8 +191,7 @@ def replace_test1():
     result = replace(parameter_1, parameter_2, parameter_3)
     expected = "TestA"
     if result != expected:
-        print("Test case 1 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected:", expected)
-
+        print("Test case 4 failed. where the parameters", parameter_1 + ",", parameter_2, "and", parameter_3, "output:", result, "instead of the expected:", expected)
 
 # Test 2: Empty strings passed. Black-box
 def replace_test2():
@@ -202,8 +201,7 @@ def replace_test2():
     result = replace(parameter_1, parameter_2, parameter_3)
     expected = ""
     if result != expected:
-        print("Test case 2 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected:", expected)
-
+        print("Test case 4 failed. where the parameters", parameter_1 + ",", parameter_2, "and", parameter_3, "output:", result, "instead of the expected:", expected)
 
 # Test 3: String to be replaced is not in the searched text
 def replace_test3():
@@ -213,8 +211,7 @@ def replace_test3():
     result = replace(parameter_1, parameter_2, parameter_3)
     expected = "1234"
     if result != expected:
-        print("Test case 3 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected:", expected)
-
+        print("Test case 4 failed. where the parameters", parameter_1 + ",", parameter_2, "and", parameter_3, "output:", result, "instead of the expected:", expected)
 # Test 4: string to be replaced is repeated more than once in the searched string. Black-box and White-box
 def replace_test4():
     parameter_1 = "122"
@@ -223,7 +220,7 @@ def replace_test4():
     result = replace(parameter_1, parameter_2, parameter_3)
     expected = "111"
     if result != expected:
-        print("Test case 4 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected:", expected)
+        print("Test case 4 failed. where the parameters", parameter_1 + ",", parameter_2, "and", parameter_3, "output:", result, "instead of the expected:", expected)
 
 
 # Test 5: The string to be replaced is not in the searched string. Black-box
@@ -234,7 +231,14 @@ def replace_test5():
     result = replace(parameter_1, parameter_2, parameter_3)
     expected = "123"
     if result != expected:
-        print("Test case 5 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected:", expected)
+        print("Test case 4 failed. where the parameters", parameter_1 + ",", parameter_2, "and", parameter_3, "output:", result, "instead of the expected:", expected)
+
+
+
+
+
+
+
 
 
 
