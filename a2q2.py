@@ -128,6 +128,15 @@ def gcd_test1():
         print("Test case 1 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected number:", expected)
 
 
+# Test 2: first parameter being smaller with valid parameters
+def gcd_test2():
+    parameter_1 = 8
+    parameter_2 = 12
+    result = gcd(parameter_1, parameter_2)
+    expected = 4
+    if result != expected:
+        print("Test case 2 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected number:", expected)
+
 
 # TODO Create test driver for whitebox tested functions
 # TODO: Create test driver for blackbox tested functions
