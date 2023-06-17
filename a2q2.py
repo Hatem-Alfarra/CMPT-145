@@ -248,6 +248,33 @@ def grade_letter_test1():
     if result != expected:
         print("Test case 1 failed. where the parameter", parameter_1, "output:", result, "instead of the expected:", expected)
 
+# Test 2: Grade is 0
+def grade_letter_test2():
+    parameter_1 = 0
+    result = grade_letter(parameter_1)
+    expected = "F"
+    if result != expected:
+        print("Test case 2 failed. where the parameter", parameter_1, "output:", result, "instead of the expected:", expected)
+
+
+# Test 3: Grade is -1
+def grade_letter_test3():
+    parameter_1 = -1
+    result = grade_letter(parameter_1)
+    expected = "Invalid"
+    if result != expected:
+        print("Test case 1 failed. where the parameter", parameter_1, "output:", result, "instead of the expected:", expected)
+
+
+# Test 4: Grade is 90
+def grade_letter_test1():
+    parameter_1 = 90
+    result = grade_letter(parameter_1)
+    expected = "A"
+    if result != expected:
+        print("Test case 1 failed. where the parameter", parameter_1, "output:", result, "instead of the expected:", expected)
+
+
 
 
 
