@@ -237,6 +237,18 @@ def replace_test5():
 
 
 
+# Testing the function grade_letter():
+
+
+# Test 1: Grade is 95
+def grade_letter_test1():
+    parameter_1 = 95
+    result = grade_letter(parameter_1)
+    expected = "A"
+    if result != expected:
+        print("Test case 1 failed. where the parameter", parameter_1, "output:", result, "instead of the expected:", expected)
+
+
 
 
 
