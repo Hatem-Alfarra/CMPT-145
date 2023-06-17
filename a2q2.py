@@ -143,9 +143,9 @@ def gcd_test3():
     parameter_1 = 1002
     parameter_2 = 8
     result = gcd(parameter_1, parameter_2)
-    expected = "-1"
+    expected = -1
     if result != expected:
-        print("Test case 3 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, type(result), "instead of the expected number:", expected, "as a string")
+        print("Test case 3 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected number:", expected)
 
 
 # Test 4: Second parameters being above 1000
@@ -153,9 +153,9 @@ def gcd_test4():
     parameter_1 = 12
     parameter_2 = 1002
     result = gcd(parameter_1, parameter_2)
-    expected = "-1"
+    expected = -1
     if result != expected:
-        print("Test case 4 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected number as a string:", expected)
+        print("Test case 4 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected number:", expected)
 
 
 # Test 5: One of parameters not an integer type but rather a string
