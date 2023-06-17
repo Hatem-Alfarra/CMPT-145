@@ -180,9 +180,61 @@ def gcd_test6():
 
 
 
-# tESTING
+# Testing the function replace():
 
 
+# Test 1: Valid arguments for parameters. Black-box
+def replace_test1():
+    parameter_1 = "Test1"
+    parameter_2 = "1"
+    parameter_3 = "A"
+    result = replace(parameter_1, parameter_2, parameter_3)
+    expected = "TestA"
+    if result != expected:
+        print("Test case 1 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected:", expected)
+
+
+# Test 2: Empty strings passed. Black-box
+def replace_test2():
+    parameter_1 = ""
+    parameter_2 = ""
+    parameter_3 = ""
+    result = replace(parameter_1, parameter_2, parameter_3)
+    expected = ""
+    if result != expected:
+        print("Test case 2 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected:", expected)
+
+
+# Test 3: String to be replaced is not in the searched text
+def replace_test3():
+    parameter_1 = "1234"
+    parameter_2 = "5"
+    parameter_3 = "not 5"
+    result = replace(parameter_1, parameter_2, parameter_3)
+    expected = "1234"
+    if result != expected:
+        print("Test case 3 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected:", expected)
+
+# Test 4: string to be replaced is repeated more than once in the searched string. Black-box and White-box
+def replace_test4():
+    parameter_1 = "122"
+    parameter_2 = "2"
+    parameter_3 = "1"
+    result = replace(parameter_1, parameter_2, parameter_3)
+    expected = "111"
+    if result != expected:
+        print("Test case 4 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected:", expected)
+
+
+# Test 5: The string to be replaced is not in the searched string. Black-box
+def replace_test5():
+    parameter_1 = "123"
+    parameter_2 = ""
+    parameter_3 = "456"
+    result = replace(parameter_1, parameter_2, parameter_3)
+    expected = "123"
+    if result != expected:
+        print("Test case 5 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected:", expected)
 
 
 
