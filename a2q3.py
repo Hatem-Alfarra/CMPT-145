@@ -51,6 +51,7 @@ def copy_list_of_lists(data: list) -> list:
         new_list.append(i[:])
     return new_list
 
+
 def copy_dict_of_dicts(data: dict) -> dict:
     """
     Purpose: Deep copy the dictionary passed in.
@@ -66,8 +67,10 @@ def copy_dict_of_dicts(data: dict) -> dict:
     """
     new_dict = {}
     for element in data:
-        if data[element] is data:
-            new_dict[element] = data[element]
+        # CHANGE: I do not see the point of the line of code below. Commenting it and fixing the indentation below it
+        # fixed one fail out of two.
+        # if data[element] is data:
+        new_dict[element] = data[element]
     return new_dict
 
 
