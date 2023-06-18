@@ -283,9 +283,7 @@ def grade_letter_test5():
 
 # Testing the function sort_students_into_grades():
 
-
-
-# Test 1
+# Test 1. Valid input.
 def sort_students_into_grades_test1():
     argument = [{"name": "Hatem",
                  "grade": "A"},
@@ -313,18 +311,119 @@ def sort_students_into_grades_test1():
         print("Test case 1 failed. The function did not return a dictionary with the key", grade + '.', "Instead the function returned", result)
 
 
+# Test 2.
+def sort_students_into_grades_test2():
+    argument = [{"name": "Hatem",
+                 "grade": "A"},
+                {"name": "Adam B",
+                 "grade": "B"},
+                {"name": "Adam C",
+                 "grade": "C"},
+                {"name": "Adam F",
+                 "grade": "F"},
+                {"name": "Adam Invalid",
+                 "grade": "Invalid"},
+                ]
+    name = "Adam C"
+    grade = "C"
+
+    result = sort_students_into_grades(argument)
+    result_list = result.get(grade)
+
+    if result_list is not None:
+        if name in result_list:
+            return
+        elif name not in result_list:
+            print("Test case 3 failed.", name, "was not found on the list of students assigned the letter grade", grade + '.', "Instead the function returned", result)
+    else:
+        print("Test case 2 failed. The function did not return a dictionary with the key", grade + '.', "Instead the function returned", result)
+
+
+
+
+# Test 3.
+def sort_students_into_grades_test3():
+    argument = [{"name": "Hatem",
+                 "grade": "A"},
+                {"name": "Adam B",
+                 "grade": "B"},
+                {"name": "Adam C",
+                 "grade": "C"},
+                {"name": "Adam F",
+                 "grade": "F"},
+                {"name": "Adam Invalid",
+                 "grade": "Invalid"},
+                ]
+    name = "Adam Invalid"
+    grade = "Invalid"
+
+    result = sort_students_into_grades(argument)
+    result_list = result.get(grade)
+
+    if result_list is not None:
+        if name in result_list:
+            return
+        elif name not in result_list:
+            print("Test case 3 failed.", name, "was not found on the list of students assigned the letter grade", grade + '.', "Instead the function returned", result)
+    else:
+        print("Test case 3 failed. The function did not return a dictionary with the key", grade + '.', "Instead the function returned", result)
+
+
+# Test 4. According to the function's doc string a list should be made for every grade
+# category ( "A", "B", "C", "D", and "Invalid"). If no student falls under category/grade "D", an empty list should
+# be the value of the key "D".
+def sort_students_into_grades_test4():
+    argument = [{"name": "Hatem",
+                 "grade": "A"},
+                {"name": "Adam B",
+                 "grade": "B"},
+                {"name": "Adam C",
+                 "grade": "C"},
+                {"name": "Adam F",
+                 "grade": "F"},
+                {"name": "Adam Invalid",
+                 "grade": "Invalid"},
+                ]
+    name = ""
+    grade = "D"
+
+    result = sort_students_into_grades(argument)
+    result_list = result.get(grade)
+
+    if result_list is not None:
+        if name in result_list:
+            return
+        elif name not in result_list:
+            print("Test case 4 failed.", name, "was not found on the list of students assigned the letter grade", grade + '.', "Instead the function returned", result)
+    else:
+        print("Test case 4 failed. The function did not return a dictionary with the key", grade + '.', "Instead the function returned", result)
+
+
+# Test 5. A dictionary of lists should be returned. If a value in the dictionary is not a list a message is printed.
+def sort_students_into_grades_test5():
+    argument = [{"name": "Hatem",
+                 "grade": "A"},
+                {"name": "Adam B",
+                 "grade": "B"},
+                {"name": "Adam C",
+                 "grade": "C"},
+                {"name": "Adam F",
+                 "grade": "F"},
+                {"name": "Adam Invalid",
+                 "grade": "Invalid"},
+                ]
+    grade = "A"
+
+    result = sort_students_into_grades(argument)
+    result_list = result.get(grade)
+
+    if type(result_list) is not list and result_list is not None:
+        print('The dictionary returned contains values that are not lists. Key:', grade + '.', 'Value:', result_list)
 
 
 
 
 
-sort_students_into_grades_test1()
-
-
-
-
-#
-#
 # gcd_test1()
 # gcd_test2()
 # gcd_test3()
@@ -343,12 +442,15 @@ sort_students_into_grades_test1()
 # grade_letter_test3()
 # grade_letter_test4()
 # grade_letter_test5()
-#
-#
-
 
 
 # TODO Create test driver for whitebox tested functions
+
+
 # TODO: Create test driver for blackbox tested functions
+
+# def blackbox_test_driver():
+
+
 # TODO: Create test driver to test all functions
 
