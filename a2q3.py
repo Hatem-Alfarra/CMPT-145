@@ -36,7 +36,11 @@ def copy_list_of_lists(data: list) -> list:
         list - a new list with new internal lists created by copying the
      information from the list passed in.
     """
-    new_list = data
+
+    # CHANGE:
+    # the slice operator [:] creates a new list containing all the elements from the original list
+    # new_list = data
+    new_list = data[:]
     return new_list
 
 def copy_dict_of_dicts(data: dict) -> dict:
