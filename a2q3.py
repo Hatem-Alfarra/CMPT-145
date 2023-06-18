@@ -17,9 +17,9 @@
 ###############################################################################
 
 # TODO: Fill in your information below
-# Student Name
-# NSID
-# Student Number
+# Student Name: Hatem Alfarra
+# NSID: Hma194
+# Student Number: 11291988
 
 # Recall another name for a list of dictionaries is a record.
 
