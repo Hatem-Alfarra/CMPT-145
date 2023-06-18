@@ -68,9 +68,11 @@ def copy_dict_of_dicts(data: dict) -> dict:
     new_dict = {}
     for element in data:
         # CHANGE: I do not see the point of the line of code below. Commenting it and fixing the indentation below it
-        # fixed one fail out of two.
+        # fixed one fail out of two. This allows for content of the dictionary to not have the same reference as the
+        # original list.
+
         # if data[element] is data:
-        new_dict[element] = data[element]
+        new_dict[element] = data[element].copy()
     return new_dict
 
 
