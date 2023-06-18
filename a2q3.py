@@ -38,9 +38,12 @@ def copy_list_of_lists(data: list) -> list:
     """
 
     # CHANGE:
-    # the slice operator [:] creates a new list containing all the elements from the original list
+    # for-loop to extract components of the list to be copied to a new list so that the lists do not share the same
+    # reference.
     # new_list = data
-    new_list = data[:]
+    new_list = list()
+    for i in data:
+        new_list.append(i)
     return new_list
 
 def copy_dict_of_dicts(data: dict) -> dict:
