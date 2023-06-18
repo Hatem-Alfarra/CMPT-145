@@ -114,6 +114,9 @@ def sort_students_into_grades(student_list: list) -> dict:
 ################### DO NOT ALTER CODE ABOVE ###################################
 
 
+# I apologize for going wild on this question (many lines of code). I had fun. I hope it does not take long to mark.
+
+
 # TODO: Create tests for functions above
 
 # Testing function gcd().
@@ -421,29 +424,6 @@ def sort_students_into_grades_test5():
         print('The dictionary returned contains values that are not lists. Key:', grade + '.', 'Value:', result_list)
 
 
-
-
-
-# gcd_test1()
-# gcd_test2()
-# gcd_test3()
-# gcd_test4()
-# gcd_test5()
-#
-#
-# replace_test1()
-# replace_test2()
-# replace_test3()
-# replace_test4()
-# replace_test5()
-#
-# grade_letter_test1()
-# grade_letter_test2()
-# grade_letter_test3()
-# grade_letter_test4()
-# grade_letter_test5()
-
-
 # TODO Create test driver for whitebox tested functions
 
 import time as t
@@ -457,11 +437,11 @@ def whitebox_test_driver():
     print('\nWhitebox testing started: \n')
 
     t.sleep(.2)
-    print('Testing the function replace()', end='')
+    print('Testing replace()', end='')
 
     # An affect I thought of to make it look like a progress bar. Not really a progress bar. Change time_dots to make
     # the results appear faster
-    time_dots = 1
+    time_dots = .8
     t.sleep(time_dots)
     print('.', end='')
     t.sleep(time_dots)
@@ -491,7 +471,7 @@ def whitebox_test_driver():
 
     t.sleep(.2)
 
-    print('Testing the function grade_letter()', end='')
+    print('Testing grade_letter()', end='')
 
     # An affect I thought of to make it look like a progress bar. Not really a progress bar. Change time_dots to make
     # the results appear faster
@@ -535,11 +515,11 @@ def blackbox_test_driver():
     print('\nBlackbox testing started: \n')
 
     t.sleep(.2)
-    print('Testing the function gcd()', end='')
+    print('Testing gcd()', end='')
 
     # An affect I thought of to make it look like a progress bar. Not really a progress bar. Change time_dots to make
     # the results appear faster
-    time_dots = 1
+    time_dots = .8
     t.sleep(time_dots)
     print('.', end='')
     t.sleep(time_dots)
@@ -569,7 +549,7 @@ def blackbox_test_driver():
 
     t.sleep(.2)
 
-    print('Testing the function sort_students_into_grades()', end='')
+    print('Testing sort_students_into_grades()', end='')
 
     # An affect I thought of to make it look like a progress bar. Not really a progress bar. Change time_dots to make
     # the results appear faster
@@ -603,7 +583,11 @@ def blackbox_test_driver():
 
 
 # TODO: Create test driver to test all functions
+
 def main_test_driver():
+
+    print("\nNote:'time_dot' is used for aesthetics. Change its value to run the code faster")
+    print('*************************************************************')
 
     tests_counter = 0
 
@@ -611,5 +595,7 @@ def main_test_driver():
     tests_counter += blackbox_test_driver()
 
     print('Total tests performed:', tests_counter)
+    print("\nNote: 'time_dot' can be found in the functions whitebox_test_diver() and blackbox_test_driver()")
+
 
 main_test_driver()
