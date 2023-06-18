@@ -259,7 +259,7 @@ def grade_letter_test3():
         print("Test case 3 failed. where the parameter", parameter_1, "output:", result, "instead of the expected:", expected)
 
 
-# Test 4: Grade is 90. Testing a multiple of 10 above 50. 80 should be a B rather than a C or an A.
+# Test 4: Grade is 80. Testing a multiple of 10 above 50. 80 should be a B rather than a C or an A.
 def grade_letter_test4():
     parameter_1 = 90
     result = grade_letter(parameter_1)
@@ -280,10 +280,37 @@ def grade_letter_test5():
 
 
 
+
 # Testing the function sort_students_into_grades():
 
 
 
+# Test 1
+def sort_students_into_grades_test1():
+    argument = [{"name": "Hatem",
+                 "grade": "A"},
+                {"name": "Adam B",
+                 "grade": "B"},
+                {"name": "Adam C",
+                 "grade": "C"},
+                {"name": "Adam F",
+                 "grade": "F"},
+                {"name": "Adam Invalid",
+                 "grade": "Invalid"},
+                ]
+    name = "Hatem"
+    grade = "A"
+
+    result = sort_students_into_grades(argument)
+    result_list = result.get(grade)
+
+    if result_list is not None:
+        if name in result_list:
+            return
+        elif name not in result_list:
+            print("Test case 1 failed.", name, "was not found on the list of students assigned the letter grade", grade + '.', "Instead the function returned", result)
+    else:
+        print("Test case 1 failed. The function did not return a dictionary with the key", grade + '.', "Instead the function returned", result)
 
 
 
@@ -291,31 +318,33 @@ def grade_letter_test5():
 
 
 
+sort_students_into_grades_test1()
 
 
 
 
-
-gcd_test1()
-gcd_test2()
-gcd_test3()
-gcd_test4()
-gcd_test5()
-
-
-replace_test1()
-replace_test2()
-replace_test3()
-replace_test4()
-replace_test5()
-
-grade_letter_test1()
-grade_letter_test2()
-grade_letter_test3()
-grade_letter_test4()
-grade_letter_test5()
-
-
+#
+#
+# gcd_test1()
+# gcd_test2()
+# gcd_test3()
+# gcd_test4()
+# gcd_test5()
+#
+#
+# replace_test1()
+# replace_test2()
+# replace_test3()
+# replace_test4()
+# replace_test5()
+#
+# grade_letter_test1()
+# grade_letter_test2()
+# grade_letter_test3()
+# grade_letter_test4()
+# grade_letter_test5()
+#
+#
 
 
 
