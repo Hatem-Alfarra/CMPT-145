@@ -118,6 +118,8 @@ def remove_from_2DList(data:list, val) -> list:
     for content in data:
         if val in content:
             content.remove(val)
+            if val in content:
+                content.remove(val)
     return data
     #return []
 
@@ -304,6 +306,8 @@ def test_partB():
         case1 = [[],[4]]
         case2 = [[1,2,3],[45,2,14],[78,47,3,56],[9,3,7]]
         case3 = [[1,2,1],[1,2,3],[1,23,4],[1,21]]
+        # CHANGE: Adding another case. case4
+        case4 = [[1,2,1,1,1]]
         test_case = [
             {"input": (case1,4),
              "output": remove_from_2DList(case1,4),
@@ -316,6 +320,10 @@ def test_partB():
              "reason": "Lists of different sizes should not impact function success"},
             {"input": (case3,1),
              "output": remove_from_2DList(case3,1),
+             "reason": "Internal lists should not impact function success"},
+            # CHANGE: Adding a new test. below. I want to see if my code works when val is repeated many times in data.
+            {"input": (case4, 1),
+             "output": remove_from_2DList(case4, 1),
              "reason": "Internal lists should not impact function success"}
         ]
         for test in test_case:
