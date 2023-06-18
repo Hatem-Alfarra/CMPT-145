@@ -118,7 +118,7 @@ def sort_students_into_grades(student_list: list) -> dict:
 
 # Testing function gcd().
 
-# Test 1: correct parameters as parameters.
+# Test 1: Correct/valid arguments into the function.
 def gcd_test1():
     parameter_1 = 12
     parameter_2 = 8
@@ -128,7 +128,7 @@ def gcd_test1():
         print("Test case 1 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected number:", expected)
 
 
-# Test 2: first parameter being smaller with valid parameters
+# Test 2: first argument being smaller with valid parameters.
 def gcd_test2():
     parameter_1 = 8
     parameter_2 = 12
@@ -138,7 +138,7 @@ def gcd_test2():
         print("Test case 2 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected number:", expected)
 
 
-# Test 3: First parameters being above 1000
+# Test 3: First argument being above 1000.
 def gcd_test3():
     parameter_1 = 1002
     parameter_2 = 8
@@ -148,7 +148,7 @@ def gcd_test3():
         print("Test case 3 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected number:", expected)
 
 
-# Test 4: Second parameters being above 1000
+# Test 4: Second argument being above 1000.
 def gcd_test4():
     parameter_1 = 12
     parameter_2 = 1002
@@ -158,24 +158,14 @@ def gcd_test4():
         print("Test case 4 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected number:", expected)
 
 
-# Test 5: One of parameters not an integer type but rather a string
+# Test 5: Arguments passed are negative
 def gcd_test5():
-    parameter_1 = 12
-    parameter_2 = "8"
+    parameter_1 = -12
+    parameter_2 = -24
     result = gcd(parameter_1, parameter_2)
-    expected = "Error"
+    expected = 12
     if result != expected:
-        print("Test case 5 failed. where the wrong parameter type did not result in an error or a message about the mistake.", "Instead", result, "was returned")
-
-
-# Test 6: One of parameters not an integer type but rather white space
-def gcd_test6():
-    parameter_1 = 12
-    parameter_2 = " "
-    result = gcd(parameter_1, parameter_2)
-    expected = "Error"
-    if result != expected:
-        print("Test case 6 failed. where an empty string was passed as the argument but that did not result in an error or a message about the mistake.", "Instead", result, "was returned")
+        print("Test case 5 failed. where the parameters", parameter_1, "and", parameter_2, "output:", result, "instead of the expected number:", expected)
 
 
 
@@ -183,7 +173,7 @@ def gcd_test6():
 # Testing the function replace():
 
 
-# Test 1: Valid arguments for parameters. Black-box
+# Test 1: Valid arguments for parameters.
 def replace_test1():
     parameter_1 = "Test1"
     parameter_2 = "1"
@@ -193,7 +183,7 @@ def replace_test1():
     if result != expected:
         print("Test case 4 failed. where the parameters", parameter_1 + ",", parameter_2, "and", parameter_3, "output:", result, "instead of the expected:", expected)
 
-# Test 2: Empty strings passed. Black-box
+# Test 2: Empty strings tested.
 def replace_test2():
     parameter_1 = ""
     parameter_2 = ""
@@ -203,7 +193,7 @@ def replace_test2():
     if result != expected:
         print("Test case 4 failed. where the parameters", parameter_1 + ",", parameter_2, "and", parameter_3, "output:", result, "instead of the expected:", expected)
 
-# Test 3: String to be replaced is not in the searched text
+# Test 3: String to be replaced is not in the searched text.
 def replace_test3():
     parameter_1 = "1234"
     parameter_2 = "5"
@@ -212,7 +202,9 @@ def replace_test3():
     expected = "1234"
     if result != expected:
         print("Test case 4 failed. where the parameters", parameter_1 + ",", parameter_2, "and", parameter_3, "output:", result, "instead of the expected:", expected)
-# Test 4: string to be replaced is repeated more than once in the searched string. Black-box and White-box
+
+
+# Test 4: The string to be replaced is repeated more than once in the searched string.
 def replace_test4():
     parameter_1 = "122"
     parameter_2 = "2"
@@ -223,15 +215,15 @@ def replace_test4():
         print("Test case 4 failed. where the parameters", parameter_1 + ",", parameter_2, "and", parameter_3, "output:", result, "instead of the expected:", expected)
 
 
-# Test 5: The string to be replaced is not in the searched string. Black-box
+# Test 5: The text to be replaced is empty.
 def replace_test5():
     parameter_1 = "123"
-    parameter_2 = ""
-    parameter_3 = "456"
+    parameter_2 = "2"
+    parameter_3 = ""
     result = replace(parameter_1, parameter_2, parameter_3)
-    expected = "123"
+    expected = "13"
     if result != expected:
-        print("Test case 4 failed. where the parameters", parameter_1 + ",", parameter_2, "and", parameter_3, "output:", result, "instead of the expected:", expected)
+        print("Test case 5 failed. where the parameters", parameter_1 + ",", parameter_2, "and", parameter_3, "output:", result, "instead of the expected:", expected)
 
 
 
@@ -240,7 +232,7 @@ def replace_test5():
 # Testing the function grade_letter():
 
 
-# Test 1: Grade is 95
+# Test 1: Grade is 95. Testing a valid answer
 def grade_letter_test1():
     parameter_1 = 95
     result = grade_letter(parameter_1)
@@ -248,7 +240,8 @@ def grade_letter_test1():
     if result != expected:
         print("Test case 1 failed. where the parameter", parameter_1, "output:", result, "instead of the expected:", expected)
 
-# Test 2: Grade is 0
+
+# Test 2: Grade is 0. Testing the boundaries (The lowest possible valid number).
 def grade_letter_test2():
     parameter_1 = 0
     result = grade_letter(parameter_1)
@@ -257,28 +250,70 @@ def grade_letter_test2():
         print("Test case 2 failed. where the parameter", parameter_1, "output:", result, "instead of the expected:", expected)
 
 
-# Test 3: Grade is -1
+# Test 3: Grade is -1. Testing an invalid number (negative integer)
 def grade_letter_test3():
     parameter_1 = -1
     result = grade_letter(parameter_1)
     expected = "Invalid"
     if result != expected:
-        print("Test case 1 failed. where the parameter", parameter_1, "output:", result, "instead of the expected:", expected)
+        print("Test case 3 failed. where the parameter", parameter_1, "output:", result, "instead of the expected:", expected)
 
 
-# Test 4: Grade is 90
-def grade_letter_test1():
+# Test 4: Grade is 90. Testing a multiple of 10 above 50. 80 should be a B rather than a C or an A.
+def grade_letter_test4():
     parameter_1 = 90
     result = grade_letter(parameter_1)
     expected = "A"
     if result != expected:
-        print("Test case 1 failed. where the parameter", parameter_1, "output:", result, "instead of the expected:", expected)
+        print("Test case 4 failed. where the parameter", parameter_1, "output:", result, "instead of the expected:", expected)
+
+
+# Test 5: Grade is 90. Testing that the output of the function letter_grade() is a string
+def grade_letter_test5():
+    parameter_1 = 90
+    result = grade_letter(parameter_1)
+    expected = str   # Answer should be a string
+    if type(result) != expected:
+        print("Test case 5 failed. where the parameter", parameter_1, "output:", result, "instead of the expected:", expected, "as a string")
+
+
+
+
+
+# Testing the function sort_students_into_grades():
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+gcd_test1()
+gcd_test2()
+gcd_test3()
+gcd_test4()
+gcd_test5()
+
+
+replace_test1()
+replace_test2()
+replace_test3()
+replace_test4()
+replace_test5()
+
+grade_letter_test1()
+grade_letter_test2()
+grade_letter_test3()
+grade_letter_test4()
+grade_letter_test5()
 
 
 
