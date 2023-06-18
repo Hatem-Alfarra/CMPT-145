@@ -111,7 +111,15 @@ def remove_from_2DList(data:list, val) -> list:
     Return:
         list - list with changes applied.
     """
-    return []
+    # CHANGE:
+    # The for loop looks into the lists inside the main list (data). the if statement searches to see if val is in the
+    # list. If val is in the sub-list the value val is removed using the method remove().
+
+    for content in data:
+        if val in content:
+            content.remove(val)
+    return data
+    #return []
 
 
 def filter_from_2DList(data:list, val) -> list:
