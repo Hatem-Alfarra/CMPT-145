@@ -36,7 +36,23 @@ def get_patient_people(community: list):
     Return:
         list of dictionaries of those with no foes.
     """
-    return []
+    # CHANGE:
+
+    # A new list
+    list_of_people_with_no_foes = []
+    # A person represents a dictionary with a persons' information.
+    for person in community:
+        # Number of foes a person has
+        foes_number = len(person["foes"])
+        # If the number of foes is zero (the "foes" value is empty or is an empty list)
+        if foes_number == 0:
+            # append the person's information to this new list
+            list_of_people_with_no_foes.append(person)
+
+    return list_of_people_with_no_foes
+
+
+    # return []
 
 def leave_community(community: list, name:str) -> None:
     """
