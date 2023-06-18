@@ -113,7 +113,7 @@ def remove_from_2DList(data:list, val) -> list:
     """
     # CHANGE:
     # The for loop looks into the lists inside the main list (data). The while loop searches to see if val is in the
-    # list. if val is in the sub-list the value val is removed using the method remove().
+    # list. while val is in the sub-list the value val is removed using the method remove().
 
     for content in data:
         while val in content:
