@@ -133,7 +133,21 @@ def filter_from_2DList(data:list, val) -> list:
     Return:
         list - a new list with no instances of the value passed in.
     """
-    return []
+    # CHANGE:
+    # The first for-loop copies content of the original list (data) and places it into another list (new_list) thus
+    # making the new list get a new reference. The second for loop looks into the lists inside the main list (data). The
+    # while loop searches to see if val is in the list. while val is in the sub-list the value val is removed using the
+    # method remove().
+
+    new_list = []
+    for list in data:
+        new_list.append(list[:])
+
+    for content in new_list:
+        while val in content:
+            content.remove(val)
+    return new_list
+    #return []
 
 ### TESTING ###
 
@@ -368,6 +382,8 @@ def test_partB():
         case1 = [[], [4]]
         case2 = [[1, 2, 3], [45, 2, 14], [78, 47, 3, 56], [9, 3, 7]]
         case3 = [[1, 2, 1], [1, 2, 3], [3, 23, 4], [1, 1]]
+        # CHANGE: new case added case4.
+        case4 = [[1, 2, 1, 1, 1]]
         test_case = [
             {"input": (case1, 4),
              "output": filter_from_2DList(case1, 4),
@@ -380,6 +396,10 @@ def test_partB():
              "reason": "Lists of different sizes should not impact function success"},
             {"input": (case3, 1),
              "output": filter_from_2DList(case3, 1),
+             "reason": "Internal lists should not impact function success"},
+            # New case added. case4 testing.
+            {"input": (case4, 1),
+             "output": filter_from_2DList(case4, 1),
              "reason": "Internal lists should not impact function success"}
         ]
         for test in test_case:
