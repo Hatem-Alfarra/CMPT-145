@@ -448,6 +448,81 @@ def sort_students_into_grades_test5():
 
 import time as t
 
+def whitebox_test_driver():
+
+    tests_counter = 0
+
+    t.sleep(.1)
+
+    print('\nWhitebox testing started: \n')
+
+    t.sleep(.2)
+    print('Testing the function replace()', end='')
+
+    # An affect I thought of to make it look like a progress bar. Not really a progress bar. Change time_dots to make
+    # the results appear faster
+    time_dots = 1
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.\n')
+    t.sleep(time_dots)
+
+
+    # Running tests. Number of tests preformed also counted.
+    replace_test1()
+    tests_counter += 1
+    replace_test2()
+    tests_counter += 1
+    replace_test3()
+    tests_counter += 1
+    replace_test4()
+    tests_counter += 1
+    replace_test5()
+    tests_counter += 1
+
+    print('\n')
+
+    t.sleep(.2)
+
+    print('Testing the function grade_letter()', end='')
+
+    # An affect I thought of to make it look like a progress bar. Not really a progress bar. Change time_dots to make
+    # the results appear faster
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.\n')
+    t.sleep(time_dots)
+
+    # Running tests. Counter counts tests preformed.
+    grade_letter_test1()
+    tests_counter += 1
+    grade_letter_test2()
+    tests_counter += 1
+    grade_letter_test3()
+    tests_counter += 1
+    grade_letter_test4()
+    tests_counter += 1
+    grade_letter_test5()
+    tests_counter += 1
+
+    print('\n')
+
+    return tests_counter
+
 # TODO: Create test driver for blackbox tested functions
 
 
@@ -526,15 +601,15 @@ def blackbox_test_driver():
 
     return tests_counter
 
+
+# TODO: Create test driver to test all functions
 def main_test_driver():
 
     tests_counter = 0
 
+    tests_counter += whitebox_test_driver()
     tests_counter += blackbox_test_driver()
 
     print('Total tests performed:', tests_counter)
 
 main_test_driver()
-
-# TODO: Create test driver to test all functions
-
