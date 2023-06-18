@@ -446,11 +446,95 @@ def sort_students_into_grades_test5():
 
 # TODO Create test driver for whitebox tested functions
 
+import time as t
 
 # TODO: Create test driver for blackbox tested functions
 
-# def blackbox_test_driver():
 
+def blackbox_test_driver():
+
+    tests_counter = 0
+
+    t.sleep(.1)
+
+    print('\nBlackbox testing started: \n')
+
+    t.sleep(.2)
+    print('Testing the function gcd()', end='')
+
+    # An affect I thought of to make it look like a progress bar. Not really a progress bar. Change time_dots to make
+    # the results appear faster
+    time_dots = 1
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.\n')
+    t.sleep(time_dots)
+
+
+    # Running tests. Number of tests preformed also counted.
+    gcd_test1()
+    tests_counter += 1
+    gcd_test2()
+    tests_counter += 1
+    gcd_test3()
+    tests_counter += 1
+    gcd_test4()
+    tests_counter += 1
+    gcd_test5()
+    tests_counter += 1
+
+    print('\n')
+
+    t.sleep(.2)
+
+    print('Testing the function sort_students_into_grades()', end='')
+
+    # An affect I thought of to make it look like a progress bar. Not really a progress bar. Change time_dots to make
+    # the results appear faster
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.', end='')
+    t.sleep(time_dots)
+    print('.\n')
+    t.sleep(time_dots)
+
+    # Running tests. Counter counts tests preformed.
+    sort_students_into_grades_test1()
+    tests_counter += 1
+    sort_students_into_grades_test2()
+    tests_counter += 1
+    sort_students_into_grades_test3()
+    tests_counter += 1
+    sort_students_into_grades_test4()
+    tests_counter += 1
+    sort_students_into_grades_test5()
+    tests_counter += 1
+
+    print('\n')
+
+    return tests_counter
+
+def main_test_driver():
+
+    tests_counter = 0
+
+    tests_counter += blackbox_test_driver()
+
+    print('Total tests performed:', tests_counter)
+
+main_test_driver()
 
 # TODO: Create test driver to test all functions
 
