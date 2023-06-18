@@ -88,7 +88,15 @@ def deep_copy_list_of_dicts(data:list) -> list:
     Return:
         list - deep copy of the list it's values are returned.
     """
-    return []
+    # CHANGE
+    # The 'return []' just returned an empty list no matter the argument for the function. Now a new list is made and
+    # contents of data are appended to the new list.
+    new_list = list()
+    for dicts in data:
+        new_list.append(dicts)
+
+    return new_list
+    #return []
 
 def remove_from_2DList(data:list, val) -> list:
     """
