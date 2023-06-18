@@ -69,7 +69,8 @@ def copy_dict_of_dicts(data: dict) -> dict:
     for element in data:
         # CHANGE: I do not see the point of the line of code below. Commenting it and fixing the indentation below it
         # fixed one fail out of two. This allows for content of the dictionary to not have the same reference as the
-        # original list.
+        # original list. copy() allows for a copy of the nested dictionaries rather
+        # than using the same reference of the original data.
 
         # if data[element] is data:
         new_dict[element] = data[element].copy()
@@ -90,10 +91,11 @@ def deep_copy_list_of_dicts(data:list) -> list:
     """
     # CHANGE
     # The 'return []' just returned an empty list no matter the argument for the function. Now a new list is made and
-    # contents of data are appended to the new list.
+    # contents of data are appended to the new list. copy() allows for a copy of the dictionaries in the list rather
+    # than using the same reference as the original data.
     new_list = list()
     for dicts in data:
-        new_list.append(dicts)
+        new_list.append(dicts.copy())
 
     return new_list
     #return []
