@@ -133,7 +133,7 @@ def are_community_besties(community: list, name1: str, name2: str) -> bool:
                 conditions_met += 1
                 # If the person is also a foe (in an addition to being a friend) return True
                 if name1 in person["foes"]:
-                    return True # Make a test case for this
+                    return True
     # If both conditions are met return True. The conditions are that both persons are each other's friends. else return
     # False
     if conditions_met == 2:
@@ -369,6 +369,21 @@ def testing():
                       {"input": (case6, "Bugs", ""),
                        "expect": True,
                        "output": are_community_besties(case6, "Bugs", "Sylvester"),
+                       "message": "Bugs is in both Sylvester's list of 'foes' and 'friends', should still get True."},
+                      # CHANGE: more test cases.
+                      {"input": (case6, "Bugs", "Sylvester"),
+                       "expect": True,
+                       "output": are_community_besties(case6, "Bugs", "Sylvester"),
+                       "message": "Bugs is in both Sylvester's list of 'foes' and 'friends', should still get True."},
+                      # More tests
+                      {"input": (case6, "Tweety", "Sylvester"),
+                       "expect": False,
+                       "output": are_community_besties(case6, "Tweety", "Sylvester"),
+                       "message": "Tweety is in both Sylvester's list of 'foes' and 'friends', should still get True."},
+                      # More tests
+                      {"input": (case6, "Tweety", "Granny"),
+                       "expect": True,
+                       "output": are_community_besties(case6, "Tweety", "Granny"),
                        "message": "Bugs is in both Sylvester's list of 'foes' and 'friends', should still get True."}
                       ]
         for test in test_cases:
