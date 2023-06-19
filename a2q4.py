@@ -69,16 +69,27 @@ def leave_community(community: list, name:str) -> None:
     Return:
         None
     """
-    # CHANGE
+    # CHANGE:
+    # Into a new list a list of the community members is made excluding the person whose name is given
 
+    # A new list
+    updated_community = []
+    # Searching the community of persons (dictionaries)
     for person in community:
-        if person["name"] == name:
-            community.remove(person)
-        if name in person["friends"]:
-            person["friends"].remove(name)
-        if name in person["foes"]:
-            person["foes"].remove(name)
-    # return
+        # If the person is not the one leaving the community we proceed.
+        if person["name"] != name:
+            # If the person being searched has the person leaving the community as a friend or foe, the person (whose
+            # name is given) is removed from that list.
+            if name in person["friends"]:
+                person["friends"].remove(name)
+            if name in person["foes"]:
+                person["foes"].remove(name)
+            # Then the new modified dictionary (the person ID) is appended into
+            # the new list.
+            updated_community.append(person)
+    community.clear()  # Remove all elements from the original community list
+    community.extend(updated_community)  # Add the updated elements to the community list
+    # return # Not needed as there is no return for this function.
 
 def are_community_besties(community: list, name1: str, name2: str) -> bool:
     """
