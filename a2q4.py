@@ -110,7 +110,7 @@ def are_community_besties(community: list, name1: str, name2: str) -> bool:
         list associated with the key "friends".
         Returns True if on both "friends" and "foes" list simultaneously
     """
-    # CHANGE:
+    # CHANGE: Entire function
 
     # To be considered besties, friendship has to go both ways. Those are the conditions
     conditions_met = 0
@@ -158,7 +158,38 @@ def get_all_community_besties(community: list, name: str) -> list:
         list associated with the key "friends"
         Still added to list if names are simultaneously in lists associated with "friends" and "foes"
     """
-    return []
+    # CHANGE:
+
+    all_community_besties = []
+    persons_friends = []
+
+    # This for-loop makes a list of the friends of the person of interest
+    for person in community:
+        if name == person["name"]:
+            for friend in person['friends']:
+                persons_friends.append(friend)
+
+    # for persons in the community
+    for person in community:
+        # If a person has the person of interest in both the list of friends and foes, their dictionary is added to the
+        # main list to be returned. else, is the person of interest just a friend (elif conditional)
+        if name in person["friends"] and name in person["foes"]:
+            all_community_besties.append(person)
+
+        # If the person of interest is in a person's friends list.
+        elif name in person["friends"]:
+            # If the examined person has the person of interest as a friend, check if their name is on the
+            # persons_friend list (the person examined is in the friend list of the person of interst)
+            if person["name"] in persons_friends:
+                # Looking at people in the examined person's friend list
+                for examined_person_friends in person["friends"]:
+                    # If the person looked at is the person of interest (the one inputted as an argument)
+                    if examined_person_friends == name:
+                        # The friendship goes both ways so,
+                        # append the dictionary of the person examined to the list all_communit_besties.
+                        all_community_besties.append(person)
+
+    return all_community_besties
 
 
 ### TESTS
