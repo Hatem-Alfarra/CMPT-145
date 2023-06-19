@@ -54,6 +54,7 @@ def get_patient_people(community: list):
     # list.
 
 
+
 def leave_community(community: list, name:str) -> None:
     """
     Purpose: Go through the list of dictionaries passed in removing name from lists for keys "friends"
@@ -109,7 +110,31 @@ def are_community_besties(community: list, name1: str, name2: str) -> bool:
         list associated with the key "friends".
         Returns True if on both "friends" and "foes" list simultaneously
     """
-    return False
+    # CHANGE:
+
+    # To be considered besties, friendship has to go both ways. Those are the conditions
+    conditions_met = 0
+    # Looking through the list of persons (dictionaries) in the community.
+    for person in community:
+        # If the person has the name under the argument name1
+        if person["name"] == name1:
+            # and if name2 is in the persons friends list
+            if name2 in person["friends"]:
+                # The first condition is met
+                conditions_met += 1
+        # If the person has the name under the argument name2
+        if person["name"] == name2:
+            # and if name1 is in the persons friends list
+            if name1 in person["friends"]:
+                # The second condition is met
+                conditions_met += 1
+    # If both conditions are met return True. The conditions are that both persons are each other's friends. else return
+    # False
+    if conditions_met == 2:
+        return True
+    else:
+        return False
+    # return False # Commented original code.
 
 def get_all_community_besties(community: list, name: str) -> list:
     """
