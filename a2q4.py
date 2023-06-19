@@ -74,6 +74,10 @@ def leave_community(community: list, name:str) -> None:
     for person in community:
         if person["name"] == name:
             community.remove(person)
+        if name in person["friends"]:
+            person["friends"].remove(name)
+        if name in person["foes"]:
+            person["foes"].remove(name)
     # return
 
 def are_community_besties(community: list, name1: str, name2: str) -> bool:
