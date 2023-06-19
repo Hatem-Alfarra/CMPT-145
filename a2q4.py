@@ -50,9 +50,9 @@ def get_patient_people(community: list):
             list_of_people_with_no_foes.append(person)
 
     return list_of_people_with_no_foes
+    # return [] # commented out from original code because we want a list with specific content, and not just an empty
+    # list.
 
-
-    # return []
 
 def leave_community(community: list, name:str) -> None:
     """
@@ -69,7 +69,12 @@ def leave_community(community: list, name:str) -> None:
     Return:
         None
     """
-    return
+    # CHANGE
+
+    for person in community:
+        if person["name"] == name:
+            community.remove(person)
+    # return
 
 def are_community_besties(community: list, name1: str, name2: str) -> bool:
     """
