@@ -122,12 +122,18 @@ def are_community_besties(community: list, name1: str, name2: str) -> bool:
             if name2 in person["friends"]:
                 # The first condition is met
                 conditions_met += 1
+                # If the person is also a foe (in an addition to being a friend) return True
+                if name2 in person["foes"]:
+                    return True
         # If the person has the name under the argument name2
         if person["name"] == name2:
             # and if name1 is in the persons friends list
             if name1 in person["friends"]:
                 # The second condition is met
                 conditions_met += 1
+                # If the person is also a foe (in an addition to being a friend) return True
+                if name1 in person["foes"]:
+                    return True # Make a test case for this
     # If both conditions are met return True. The conditions are that both persons are each other's friends. else return
     # False
     if conditions_met == 2:
